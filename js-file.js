@@ -18,21 +18,21 @@ const zero = document.getElementById("0");
 const total = document.getElementById("total");
 const addition = document.getElementById("addition"); 
 var additionClicked = false;
+var subtractionClicked = false;
 var firstStringNum = "";
 var secondStringNum = "";
 let stringNumber;
 
 //adding event listeners
-console.log(additionClicked)
 
 //seven.addEventListener("click", getFirstString);
 eight.addEventListener("click", (e) => {
-    
-    e.target.value = "8"
-    if(additionClicked === false) {
+    console.log(additionClicked)
+    e.target.value = "8";
+    if(additionClicked === false && subtractionClicked === false) {
         getFirstString(e.target.value)
     }
-    else {
+    else if(additionClicked === true || subtractionClicked === true){
         getSecondString(e.target.value)
     }
 });
@@ -71,7 +71,9 @@ zero.addEventListener("click", (e) => {
 addition.addEventListener("click", (e) => {
     additionClicked = true;
 })
-total.addEventListener("click", getResult)
+subtraction.addEventListener("click", (e) => {
+    subtractionClicked = true;
+})
 
 function getFirstString(numValue) {
     firstStringNum += numValue;
@@ -83,11 +85,25 @@ function getSecondString(numValue) {
     console.log(`seconda stringa: ${secondStringNum}`)
 }
 
+total.addEventListener("click", () =>{
+    getResult()
+})
+
 function getResult() {
-    result = Number(firstStringNum) + Number(secondStringNum)
-    console.log(result)
-    firstStringNum = result;
-    secondStringNum = "";
+    if(additionClicked === true) { 
+        result = Number(firstStringNum) + Number(secondStringNum)
+        console.log(result)
+        firstStringNum = result;
+        additionClicked = false;       
+    }
+    else if(subtractionClicked === true) {
+        result = Number(firstStringNum) - Number(secondStringNum)
+        console.log(result)
+       firstStringNum = result;
+       subtractionClicked = false;
+    }
+    
+    secondStringNum = "";    
 }
 
 /*
