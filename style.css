@@ -1,0 +1,48 @@
+#calculator {
+    background-color: rgba(0, 0, 0, 0.649);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -200px;
+    border: 2px solid black;
+    width: 400px;
+    height: 500px;
+}
+
+#display {
+    background-color: rgba(0, 103, 0, 0.406);
+    border: 1px solid black;
+    width: 380px;
+    height: 100px;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+#clear, #delete {
+    font-size: 20px;
+    margin-top: 18px;
+    width: 185px;
+    height: 60px;
+}
+
+#clear {
+    margin-left: 11px;
+}
+
+#numbers {
+    width: 100%;
+    height: 100%;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+#numbers button {
+    font-size: 30px;
+    width: 90px;
+    height: 70px;
+}
+
+p {
+    color: white;
+}
