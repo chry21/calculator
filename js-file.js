@@ -21,106 +21,17 @@ var additionClicked = false;
 var subtractionClicked = false;
 var moltiplicationClicked = false;
 var divisionClicked = false;
+var totalClicked = false;
 var firstStringNum = "";
 var secondStringNum = "";
-
-//adding event listeners
-//numbers
-seven.addEventListener("click", (e) => {
-    e.target.value = "7"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-eight.addEventListener("click", (e) => {
-    e.target.value = "8"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-nine.addEventListener("click", (e) => {
-    e.target.value = "9"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-four.addEventListener("click", (e) => {
-    e.target.value = "4"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-five.addEventListener("click", (e) => {
-    e.target.value = "5"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-six.addEventListener("click", (e) => {
-    e.target.value = "6"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-one.addEventListener("click", (e) => {
-    e.target.value = "1"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-two.addEventListener("click", (e) => {
-    e.target.value = "2"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-three.addEventListener("click", (e) => {
-    e.target.value = "3"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
-zero.addEventListener("click", (e) => {
-    e.target.value = "0"; //gives the button eight the value of "8"
-    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
-        getFirstString(e.target.value)
-    }
-    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
-        getSecondString(e.target.value)
-    }
-});
+var firstNum = 0;
+var secondNum;
+var result;
 
 //operators
 addition.addEventListener("click", (e) => {
-    additionClicked = true;                  
-})
+    additionClicked = true;   
+});
 subtraction.addEventListener("click", (e) => {
     subtractionClicked = true;
 })
@@ -131,51 +42,48 @@ division.addEventListener("click", (e) => {
     divisionClicked = true;
 })
 
-function getFirstString(numValue) {
-    firstStringNum += numValue;
-    firstNum = Number(firstStringNum);
-    console.log(`prima stringa: ${firstStringNum}`)
+function getFirstString(value) {
+    if(additionClicked === false && subtractionClicked === false && moltiplicationClicked === false && divisionClicked === false) { "condition to check if the first string has been declared or not"
+        firstStringNum += value;
+        firstNum = Number(firstStringNum);
+        console.log(`primo num: ${firstNum}`)
+    }
+    else if(additionClicked === true || subtractionClicked === true || moltiplicationClicked === true || divisionClicked === true){ "condition to check if the second string has been declared or not"
+        getSecondString(value)
+    }
 }
 
-function getSecondString(numValue) {
-    secondStringNum += numValue;
+function getSecondString(value) {
+    secondStringNum += value;
     secondNum = Number(secondStringNum);
-    console.log(`seconda stringa: ${secondStringNum}`)
+    console.log(`secondo num: ${secondNum}`)
 }
 
 total.addEventListener("click", () =>{
+    totalClicked = true;
     getResult()
 })
 
 function getResult() {
     if(additionClicked === true) { 
         result = firstNum + secondNum;
-        console.log(result)
-        firstNum = result;
-        firstStringNum = "";
         additionClicked = false;       
     }
     else if(subtractionClicked === true) {
         result = firstNum - secondNum;
-        console.log(result)
-        firstNum = result;
-        firstStringNum = "";
         subtractionClicked = false; 
     }
     else if(moltiplicationClicked === true) {
         result = firstNum * secondNum;
-        console.log(result)
-        firstNum = result;
-        firstStringNum = "";
         moltiplicationClicked = false; 
     }   
     else if(divisionClicked === true) {
         result = firstNum / secondNum;
-        console.log(result)
-        firstNum = result;
-        firstStringNum = "";
         divisionClicked = false; 
-    }
+    }  
+    console.log(result)
+    firstNum = result;
+    firstStringNum = "";
     secondStringNum = "";    
 }
 
