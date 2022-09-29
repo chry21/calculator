@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="container">
+        <div id="display">
+            <p id="displayInput"></p>
+            <p id="displayResult"></p>
+        </div>
+        <div id="buttons">
+            <button id="clear" class = "buttons" onclick="clearDisplay()">CLEAR</button>
+            <button id="delete" class = "buttons" onclick="deleteLastNum()">DELETE</button>       
+            <button id="7" class = "buttons" value="7" onclick="getStrings(value)">7</button>
+            <button id="8" class = "buttons" value="8" onclick="getStrings(value)">8</button>
+            <button id="9" class = "buttons" value="9" onclick="getStrings(value)">9</button>
+            <button id="division" class = "buttons" class="operators" value="/" onclick ="getOperator(value)">/</button>
+            <button id="4" class = "buttons" value="4" onclick="getStrings(value)">4</button>
+            <button id="5" class = "buttons" value="5" onclick="getStrings(value)">5</button>
+            <button id="6" class = "buttons" value="6" onclick="getStrings(value)">6</button>
+            <button id="moltiplication" class = "buttons" class="operators" value="x" onclick="getOperator(value)">x</button>
+            <button id="1" class = "buttons" value="1" onclick="getStrings(value)">1</button>
+            <button id="2" class = "buttons" value="2" onclick="getStrings(value)">2</button>
+            <button id="3" class = "buttons" value="3" onclick="getStrings(value)">3</button>
+            <button id="subtraction" class = "buttons" class="operators" value="-" onclick="getOperator(value)">-</button>
+            <button id="dot" class = "buttons" value="." onclick="getStrings(value)">.</button>
+            <button id="0" class = "buttons" value="0" onclick="getStrings(value)">0</button>
+            </button> <button id="total" class = "buttons">=</button>
+            <button id="addition" class = "buttons" class="operators" value="+" onclick="getOperator(value)">+
+            
+        </div>
+    </div>
+</body>
+</html>
